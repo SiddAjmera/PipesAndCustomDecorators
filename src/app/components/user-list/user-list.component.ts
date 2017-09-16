@@ -43,8 +43,8 @@ export class UserListComponent implements OnInit {
   public addUser(): void {
     this.userService.addUser({
       id: Math.floor(Math.random() * 1000 + 1),
-      name: this.userName || 'test',
-      email: this.userName || 'test' + '@domain.com',
+      name: this.userName || 'Test',
+      email: this.userName || 'Test' + '@domain.com',
       dob: this.randomDate(new Date(1901, 1, 1, 0, 1, 1, 1), new Date(1998, 12, 31, 23, 59, 59, 999), 0, 23)
     });
     this.userName = '';
