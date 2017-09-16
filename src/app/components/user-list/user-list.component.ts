@@ -17,7 +17,6 @@ export class UserListComponent implements OnInit {
 
   public users: User[];
   public userName: string;
-  public appStatus: Promise<{}>;
   private subscription: Subscription;
 
 
@@ -38,15 +37,14 @@ export class UserListComponent implements OnInit {
     this.subscription = this.userService.usersChanged.subscribe((users: User[]) => {
       this.users = users;
     });
-    this.appStatus = this.userService.getAppStatus();
     console.log('The result of the override decorator: ', this.propertyToOverride);
   }
 
   public addUser(): void {
     this.userService.addUser({
       id: Math.floor(Math.random() * 1000 + 1),
-      name: this.userName,
-      email: this.userName + '@domain.com',
+      name: this.userName || 'test',
+      email: this.userName || 'test' + '@domain.com',
       dob: this.randomDate(new Date(1901, 1, 1, 0, 1, 1, 1), new Date(1998, 12, 31, 23, 59, 59, 999), 0, 23)
     });
     this.userName = '';

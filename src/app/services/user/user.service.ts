@@ -26,10 +26,4 @@ export class UserService {
     return this._users.slice();
   }
 
-  public getAppStatus() {
-    return new Promise((resolve, reject) => {
-      setTimeout(resolve('Active'), 5000);
-    });
-  }
-
 }

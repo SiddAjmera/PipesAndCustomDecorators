@@ -3,8 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { User } from '../../models/user';
 
 @Pipe({
-  name: 'specificUsers',
-  pure: true
+  name: 'specificUsers'
 })
 export class SpecificUsersPipe implements PipeTransform {
 
