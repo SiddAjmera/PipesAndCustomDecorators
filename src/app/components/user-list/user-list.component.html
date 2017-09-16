@@ -1,0 +1,17 @@
+<div class="container">
+	<h3>App Status is {{ appStatus | async }}</h3>
+	<h3>Users</h3>
+	
+	<input type="text" class="form-control" [(ngModel)]="userName"><br>
+	<button class="btn btn-primary" (click)="addUser()">Add User</button>
+	
+	<hr>
+	<ul class="list-group">
+		<li class="list-group-item"
+			*ngFor="let user of users | specificUsers: 'even'">
+			<app-user-list-item [user]="user"></app-user-list-item>
+		</li>
+	</ul>
+	<hr>
+	<a routerLink="/placeholder">Go to Placeholder</a>
+</div>
