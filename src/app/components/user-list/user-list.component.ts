@@ -50,6 +50,8 @@ export class UserListComponent implements OnInit {
     this.userName = '';
   }
 
-  public ngOnDestroy() {}
+  public ngOnDestroy() {
+    console.log('The original implementation of the ngOnDestroy worked!');
+  }
 
 }

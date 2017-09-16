@@ -7,7 +7,7 @@
 	<hr>
 	<ul class="list-group">
 		<li class="list-group-item"
-			*ngFor="let user of users"
+			*ngFor="let user of users | specificUsers: 'even'"
 			[ngClass]="user.id % 2 === 0 ? 'list-group-item-success' : 'list-group-item-warning'"><!-- 	 | specificUsers: 'even' -->
 			<app-user-list-item [user]="user"></app-user-list-item>
 		</li>

@@ -1,1 +1,1 @@
-<p>{{ user.id }} | {{ user.name }} | {{ user.dob | date: 'fullDate' | uppercase}} | <a [href]="user.email | appendor">{{user.email}}</a></p>
+<p>{{ user.id }} | {{ user.name }} | {{ user.dob }} | <a [href]="user.email | appendor:'pre':'mailto://'">{{user.email}}</a></p>

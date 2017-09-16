@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class AppendorPipe implements PipeTransform {
 
-  transform(input: string): string {
-    return 'mailto://' + input;
+  transform(input: string, position: string, textToAppend: string): string {
+    return (position === 'pre') ? textToAppend + input : input + textToAppend;
   }
 
 }

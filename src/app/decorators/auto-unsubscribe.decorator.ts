@@ -6,6 +6,7 @@ export function AutoUnsubscribe(target) {
       let property = this[prop];
       if( property && (typeof property.unsubscribe === 'function') ) {
         property.unsubscribe();
+        console.log('Our implementation of the ngOnDestroy worked!');
       }
     }
     if(original && (typeof original === 'function')) {
