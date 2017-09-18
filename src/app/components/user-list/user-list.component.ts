@@ -12,15 +12,13 @@ import { UserService } from '../../services/user/user.service';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
-@AutoUnsubscribe
+
 export class UserListComponent implements OnInit {
 
   public users: User[];
   public userName: string;
   private subscription: Subscription;
 
-
-  @Override('This is already overrided!')
   private propertyToOverride: string = 'This is not overrided yet!';
 
   constructor(private userService: UserService) { }
